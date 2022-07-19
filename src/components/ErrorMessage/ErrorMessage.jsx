@@ -1,6 +1,11 @@
+import './errorMessage.scss';
+
 const ErrorMessage = () => {
-  return (
-    <div>Error 404</div>
-  )
+	return (
+		<div className="error-message">
+			Something went wrong
+		</div>
+	)
 }
-export default ErrorMessage
+
+export default ErrorMessage;

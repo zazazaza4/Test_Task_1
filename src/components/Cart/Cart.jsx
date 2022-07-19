@@ -1,15 +1,16 @@
-import './Cart.scss';
-import photo  from '../../assets/photo-cover.svg'
+import { memo } from 'react';
+import { truncate } from '../../utils/truncate';
+import defaultPhoto  from '../../assets/photo-cover.svg';
 
-const Cart = ({name, position, email, phone, photo}) => {
-  
-  const truncate = (str, n = 30) => str.length > n ?  str.substr(0, n-1) + '...' : str;
+import './Cart.scss';
+
+const Cart = memo(({name, position, email, phone, photo}) => {
 
   return (
     <article className='cart'>
         <div className="cart__content">
             <div className="cart__image">
-                <img src={photo} alt="" className="" />
+                <img src={photo && defaultPhoto} alt="" className="" />
             </div>
             <p className='cart__name cart__text'>
               <span>{name}</span>
@@ -32,5 +33,6 @@ const Cart = ({name, position, email, phone, photo}) => {
         </div>
     </article>
   )
-}
+});
+
 export default Cart

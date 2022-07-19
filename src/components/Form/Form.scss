@@ -16,6 +16,18 @@
     }
 }
 
+.success {
+    text-align: center;
+
+    .form__title {
+        margin-bottom: $base * 12.5;
+    }
+
+}
+
+.error {
+    color: $color-red-100;
+}
 
 .select {
     margin-top: $base * 11;
@@ -125,6 +137,12 @@
                 cursor: pointer;
                 width: 100%;
             }
+        }
+    }
+
+    .error {
+        .upload__wrapper {
+            border: 1px solid $color-red-100;
         }
     }
 

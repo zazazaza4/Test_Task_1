@@ -63,7 +63,7 @@ h1, h2 {
 
 .error {
     .input__underlined {
-        &>input {
+        & > input {
             border-color: $color-red-100;
         }
     }
