@@ -1,0 +1,156 @@
+@import '../../style/variables.scss';
+
+.form {
+
+    &__title {
+        text-align: center;
+    }
+
+    &__container {
+        margin: 0 auto;
+        width: $base * 95;
+    }
+
+    .input__group {
+        margin-top: $base * 12.5;
+    }
+}
+
+
+.select {
+    margin-top: $base * 11;
+
+    &__title {
+        font-size: $base * 4;
+        margin-bottom: $base * 2.5;
+        font-weight: 400;
+    }
+
+    .radio {
+        margin-bottom: $base * 2.5;
+        margin: 0.5rem;
+        
+            input[type="radio"] {
+                position: absolute;
+                opacity: 0;
+        
+                +.radio-label {
+                    &:before {
+                        content: '';
+                        background: $color-bg;
+                        border-radius: 100%;
+                        border: 1px solid $color-gray-200;
+                        display: inline-block;
+                        width: $base * 5;
+                        height: $base * 5;
+                        position: relative;
+                        top: 5%;
+                        margin-right: $base * 3;
+                        vertical-align: top;
+                        cursor: pointer;
+                        text-align: center;
+                        transition: all 250ms ease;
+                    }
+                }
+        
+                &:checked {
+                    +.radio-label {
+                        &:before {
+                            background-color: $color-secondary;
+                            border-color: $color-secondary;
+                            box-shadow: inset 0 0 0 $base $color-bg;
+                        }
+                    }
+                }
+            }
+    }
+
+    &__upload {
+        margin-top: $base * 12.5;
+        cursor: pointer;
+
+        .upload__wrapper {
+            border: 1px solid $color-gray-200;
+            position: relative;
+            border-radius: $base;
+            width: calc(100% - 2px);
+            height: $base * 13;
+
+            &::before {
+                content: attr(data-text);
+                position: absolute;
+                top: 0;
+                left: 22%;
+                background: #fff;
+                padding: 10px 15px;
+                display: block;
+                width: calc(100% - 113px);
+                pointer-events: none;
+                z-index: 20;
+                height: $base * 13 - 20px;
+                line-height: $base * 13.5 - 20px;
+                color: $color-gray-300;
+                border-radius: $base;
+            }
+
+            &:after {
+                content: 'Upload';
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: inline-block;
+                border: 1px solid $color-black-200;
+                height: $base * 13.5 - 3px;
+                color: $color-black-200;
+                z-index: 25;
+                font-size: 16px;
+                line-height: $base * 13.5;
+                padding: 0 15px;
+                pointer-events: none;
+                border-radius: $base 0px 0px $base;
+            }
+
+            input {
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 15;
+                height: $base * 13.5 - 20px;
+                margin: 0;
+                padding: 0;
+                display: block;
+                cursor: pointer;
+                width: 100%;
+            }
+        }
+    }
+
+    &__btn {
+        margin-top: $base * 12.5;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .form {
+        &__container {
+            margin: 0 auto;
+            width: $base * 82;
+        }
+    }
+
+    .select {
+        &__upload {        
+            .upload__wrapper {
+                width: 326px;
+
+                &::before {
+                    left: 25%;
+                }
+            }
+        }
+    }
+}

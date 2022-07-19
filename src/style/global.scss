@@ -1,0 +1,97 @@
+@import './variables.scss';
+
+h1, h2 {
+    font-size: 40px;
+    line-height: 40px;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.input {
+    &__group {
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__underlined {
+        position: relative;
+        width: 380px;
+        & > input {
+            padding: 0 0 0 16px;
+            background-color: $color-bg;
+            border-radius: $base;
+            width: calc(100% - 4px);
+            height: 54px;
+            border: 0.125rem solid $color-gray-200;
+            outline: none;
+            transition: all .3s ease;
+
+            &:focus + .input__label {  
+                background-color: $color-bg;
+                transform: translate3d(0, -28px, 0) scale(.875);
+            }
+
+            &:not(:placeholder-shown) + .input__label {
+                background-color: $color-bg;
+                transform: translate3d(0, -28px, 0) scale(.875);
+            } 
+        }
+    }
+
+    &__label {
+        position: absolute;
+        top: 16px;
+        left: 12px;
+        color: $color-gray-300;
+        transition: all .3s ease;
+    }
+
+    &__helper {
+        display: none;
+        font-size: 14px;
+        color: $color-red-100;
+        position: absolute;
+        top: 100%;
+        left: 20px;
+    }
+}
+
+.error {
+    .input__underlined {
+        &>input {
+            border-color: $color-red-100;
+        }
+    }
+
+    .input__label {
+        color: $color-red-100;
+    }
+}
+
+@media (max-width: 1290px) {
+    .container {
+        padding: 0 60px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+    .input {
+        &__underlined {
+            width: 328px;
+        }
+    }
+}

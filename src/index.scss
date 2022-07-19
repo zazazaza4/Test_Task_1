@@ -1,0 +1,11 @@
+@import './style/variables.scss';
+
+body {
+  color: $color-black-200;
+  margin: 0;
+  padding: 0;
+  background: $color-bg;
+  font-size: $base * 4;
+  line-height: $base * 6.5;
+  font-family: 'Nunito', sans-serif;
+}

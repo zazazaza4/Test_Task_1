@@ -1,0 +1,82 @@
+@import '../../style/variables.scss';
+
+main {
+    padding-bottom: 100px;
+}
+
+.welcome {
+    padding-top: $base * 15;
+    height: calc(100vh - $base * 30);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-black;
+
+    &:before {
+        content: '';
+        background: url('../../assets/pexels-alexandr-podvalny-1227513.jpeg') 0 0 / cover no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        opacity: 0.5;
+    }
+
+    &__content {
+        z-index: 3;
+        color: $color-white;
+        max-width: $base * 95;
+        text-align: center;
+
+        button {
+            color: $color-black;
+        }
+    }
+
+    &__disc {
+        margin: $base * 5 0 $base * 8 0;
+    }
+}
+
+.staff {
+    margin: $base * 35 auto;
+    text-align: center;
+
+    &__title {
+        margin: 0 0 $base * 12.5 0;
+        -webkit-text-stroke: 1px $color-black;
+        -webkit-text-fill-color: $color-black-200;
+        text-shadow: 0px 4px 4px $color-black-100;
+    }
+
+    &__carts {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: $base * 7.5;
+    }
+
+    &__btn {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .staff {
+        &__carts {
+            grid-template-columns: repeat(2, 50%);
+            justify-items: center;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .staff {
+        &__carts {
+            grid-template-columns: repeat(auto-fill, minmax(0px, $base * 82));
+            justify-content: center;
+        }
+    }
+}

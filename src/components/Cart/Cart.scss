@@ -1,0 +1,76 @@
+@import '../../style/variables.scss';
+
+.cart {
+    width: $base * 92.5;
+    height: $base * 63.5;
+    border-radius: $base * 2.5;
+    background-color: $color-white;
+
+    &__content {
+       padding: $base * 5;
+    }
+
+    &__image {
+        margin-bottom: $base * 5;
+
+        img {
+            border-radius: 50%;
+            width: $base * 17.5;
+            height: $base * 17.5;
+            object-fit: cover;
+        }
+    }
+
+    &__name {   
+        margin: $base * 5 0;
+    }   
+
+    &__info {
+        p {
+            margin: 0px;
+        }
+    }
+
+    &__text {
+        cursor: pointer;
+        position: relative;
+
+        span {
+           display: none
+        }
+
+        &:hover span {
+            color: $color-white;
+            border-radius: $base;
+            padding: $base $base * 4;
+            display: block;
+            z-index: 100;
+            top: 30px;
+            right: 10%;
+            background-color: $color-black-200;
+            position: absolute;
+            text-decoration: none
+        }
+    }
+}
+
+@media (max-width: 1290px) {
+    .cart {
+        width: $base * 70.5;
+        height: $base * 63.5;
+    }
+}
+
+@media (max-width: 1024px) {
+    .cart {
+        width: $base * 86;
+        height: $base * 63.5;
+    }
+}
+
+@media (max-width: 768px) {
+    .cart {
+        width: $base * 82;
+        height: $base * 63.5;
+    }
+}
