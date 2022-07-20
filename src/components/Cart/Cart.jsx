@@ -10,7 +10,7 @@ const Cart = memo(({name, position, email, phone, photo}) => {
     <article className='cart'>
         <div className="cart__content">
             <div className="cart__image">
-                <img src={photo && defaultPhoto} alt="" className="" />
+                <img src={photo || defaultPhoto} alt="" className="" />
             </div>
             <p className='cart__name cart__text'>
               <span>{name}</span>
